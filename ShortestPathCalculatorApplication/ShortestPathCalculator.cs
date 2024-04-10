@@ -8,7 +8,7 @@ namespace ShortestPathCalculatorApplication
     public class ShortestPathCalculator : IShortestPathCalculator
     {
         private readonly INodeDataService _nodeDataService;
-        private static int V = 9;
+        private static int V = 0;
 
         public ShortestPathCalculator(INodeDataService nodeDataService)
         {
@@ -18,6 +18,7 @@ namespace ShortestPathCalculatorApplication
         // Implements Dijkstra's algorithm to find the shortest path for a graph represented using adjacency matrix representation.
         public ShortestPathDto CalculateShortestPath(string startNode, string finishNode)
         {
+            V = _nodeDataService.ProvideInitialNodes().Length;
             int[,] graph = _nodeDataService.ProvideGraph();
             int startNodeIndex = startNode.GetPosition(_nodeDataService.ProvideInitialNodes());
             int finishNodeIndex = finishNode.GetPosition(_nodeDataService.ProvideInitialNodes());

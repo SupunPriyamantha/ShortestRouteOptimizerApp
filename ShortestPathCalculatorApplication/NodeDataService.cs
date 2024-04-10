@@ -4,17 +4,18 @@ namespace ShortestPathCalculatorApplication
 {
     public class NodeDataService : INodeDataService
     {
-        private static int[,] NodeGraph = new int[9, 9];
         private static string[] nodeArray = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I" };
+        private static int[,] nodeGraph = new int[nodeArray.Length, nodeArray.Length];
 
         public NodeDataService()
         {
+            // Initialize nodeGraph from here.
             InitializeGraph();
         }
 
         public int[,] ProvideGraph()
         {
-            return NodeGraph;
+            return nodeGraph;
         }
 
         public string[] ProvideInitialNodes()
@@ -24,9 +25,12 @@ namespace ShortestPathCalculatorApplication
 
         private void SeedGraph(string u, string v, int w)
         {
-            NodeGraph[u.GetPosition(nodeArray), v.GetPosition(nodeArray)] = w;
+            nodeGraph[u.GetPosition(nodeArray), v.GetPosition(nodeArray)] = w;
         }
 
+
+        // New nodes should add to nodeArray and seed the distances from here.
+        // Bidirectional nodes should seed both ways. Ondirectional ones should seed only for that direction.
         private void InitializeGraph()
         {
             SeedGraph("A", "B", 4);
