@@ -1,0 +1,44 @@
+﻿@model ShortestRouteOptimizerMVCApp.Models.ShortestPathData
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Shortest Path Data</h2>
+<div class="border p-3 mt-4">
+    <div class="mb-3">
+        Start Node :
+        <div class="col-md-10">
+            @Model.StartNode.ToUpper()
+        </div>
+    </div>
+
+    <div class="mb-3">
+        Finish Node :
+        <div class="col-md-10">
+            @Model.FinishNode.ToUpper()
+        </div>
+    </div>
+    <div class="mb-3">
+        Shortest Distance :
+        <div class="col-md-10">
+            @Model.ShortestDistance
+        </div>
+    </div>
+    <div class="mb-3">
+        Node Sequance :
+        <div class="col-md-10">
+            <table>
+                <tr>
+                    @foreach (var obj in @Model.NodeNames)
+                    {
+                        <td>@obj</td>
+                        <td>&nbsp; &nbsp; </td>
+                    }
+                </tr>
+            </table>
+        </div>
+    </div>
+    <a href="Index" style="width:250px">
+        Back To Shortest Path Calculator
+    </a>
+</div>

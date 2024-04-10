@@ -1,0 +1,49 @@
+﻿@model ShortestRouteOptimizerMVCApp.Models.ShortestPathData
+
+@{
+    ViewBag.Title = "ShortestPath";
+}
+
+<h2>Shortest Path Calculator</h2>
+
+@using (Html.BeginForm("Index", "ShortestPath", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="border p-3 mt-4">
+        <div class="mb-3">
+            <label><b>You have nodes from A - I. You can only select start node and finish node between this range.</b></label>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.StartNode, "Start Node :", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.StartNode,
+                new SelectList(Model.InitialNodeNames.Select(n => n).ToList()),
+                "Select Node")
+                @Html.ValidationMessageFor(model => model.StartNode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.FinishNode, "Finish Node :", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FinishNode,
+                new SelectList(Model.InitialNodeNames.Select(n => n).ToList()),
+                "Select Node")
+                @Html.ValidationMessageFor(model => model.FinishNode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Calculate" class="btn btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+@Scripts.Render("~/bundles/jqueryval")
+
+
+

@@ -1,0 +1,6 @@
+C:\NewVolume\TestProjects\ShortestRouteOptimizerMVCApp\ShortestPathCalculator\bin\Debug\ShortestPathCalculator.dll
+C:\NewVolume\TestProjects\ShortestRouteOptimizerMVCApp\ShortestPathCalculator\bin\Debug\ShortestPathCalculator.pdb
+C:\NewVolume\TestProjects\ShortestRouteOptimizerMVCApp\ShortestPathCalculator\obj\Debug\ShortestPathCalculator.csproj.AssemblyReference.cache
+C:\NewVolume\TestProjects\ShortestRouteOptimizerMVCApp\ShortestPathCalculator\obj\Debug\ShortestPathCalculator.csproj.CoreCompileInputs.cache
+C:\NewVolume\TestProjects\ShortestRouteOptimizerMVCApp\ShortestPathCalculator\obj\Debug\ShortestPathCalculator.dll
+C:\NewVolume\TestProjects\ShortestRouteOptimizerMVCApp\ShortestPathCalculator\obj\Debug\ShortestPathCalculator.pdb
